@@ -1,16 +1,15 @@
 {
-  "name": "github-lite",
+  "name": "mongodb-lite",
   "version": "0.0.0",
-  "author": "y68ji <y68ji@edu.uwaterloo.ca>",
+  "author": "testhackerman12 <testhackerman12@hotmail.com>",
   "main": "functions/__main__.js",
   "dependencies": {
-    "lib": "^3.0.2",
-    "request": "^2.88.0"
+    "mongodb": "^3.1.4"
   },
   "private": true,
   "stdlib": {
     "build": "faaslang",
-    "name": "y68ji/github-lite",
+    "name": "testhackerman12/mongodb-lite",
     "timeout": 10000,
     "publish": true,
     "personalize": {
