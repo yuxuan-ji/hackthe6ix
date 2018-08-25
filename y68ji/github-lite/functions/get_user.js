@@ -1,6 +1,6 @@
 const request = require("request");
 /**
-* Get the current authenticated user
+* Get an user
 * @param {string} username
 * @param {string} password
 * @param {string} user Name of the user you wish to query
