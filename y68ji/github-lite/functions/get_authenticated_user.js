@@ -1,19 +1,20 @@
 const request = require("request");
 /**
 * Get the current authenticated user
-* @param {string} username
-* @param {string} password
+* @param {string} id Your username
+* @param {string} pw Your password
 * @returns {any}
 */
-module.exports = (username, password, context, callback) => {
-    var auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
+module.exports = (id, pw, context, callback) => {
+    var auth = 'Basic ' + Buffer.from(id + ':' + pw).toString('base64');
     request(
         {
-        url: 'https://api.github.com/user',
-        headers: {
-                    "Authorization": auth,
-                    "User-Agent": "github-lite"
-                }
+            url: 'https://api.github.com/user',
+            json: true,
+            headers: {
+                        "Authorization": auth,
+                        "User-Agent": "github-lite"
+                     }
         },
         function (error, response, body) {
             if (error) {
@@ -22,5 +23,5 @@ module.exports = (username, password, context, callback) => {
                 callback(null, body);
             }
         }
-    )
+    );
 };
