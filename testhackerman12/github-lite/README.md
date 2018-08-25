@@ -10,8 +10,7 @@ context:  (enabled)
 bg:       info
 
   Get an user
-  @param {string} id Your username
-  @param {string} pw Your password
+  @param {string} token OAuth token
   @param {string} target Username of the user you wish to follow
   @returns {any}
 
@@ -24,8 +23,7 @@ context:  (enabled)
 bg:       info
 
   Get the current authenticated user
-  @param {string} id Your username
-  @param {string} pw Your password
+  @param {string} token OAuth token
   @returns {any}
 
 get_user
@@ -37,8 +35,7 @@ context:  (enabled)
 bg:       info
 
   Get an user
-  @param {string} id Your username
-  @param {string} pw Your password
+  @param {string} token OAuth token
   @param {string} target Username of the user you wish to query
   @returns {any}
 
@@ -51,8 +48,7 @@ context:  (enabled)
 bg:       info
 
   Get an user
-  @param {string} id Your username
-  @param {string} pw Your password
+  @param {string} token OAuth token
   @param {string} target Username of the user you wish to unfollow
   @returns {any}
 ```

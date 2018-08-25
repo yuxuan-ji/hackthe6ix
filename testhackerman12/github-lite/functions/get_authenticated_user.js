@@ -1,12 +1,11 @@
 const request = require("request");
 /**
 * Get the current authenticated user
-* @param {string} id Your username
-* @param {string} pw Your password
+* @param {string} token OAuth token
 * @returns {any}
 */
-module.exports = (id, pw, context, callback) => {
-    var auth = 'Basic ' + Buffer.from(id + ':' + pw).toString('base64');
+module.exports = (token, context, callback) => {
+    var auth = 'token ' + token;
     request(
         {
             url: 'https://api.github.com/user',

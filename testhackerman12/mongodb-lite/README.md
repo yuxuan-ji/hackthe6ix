@@ -53,15 +53,4 @@ bg:       info
   @param {object} data {"key_name":"updated_value"}
   @returns {any}
 
-(default function)
-------------------
-url:      https://testhackerman12.lib.id/mongodb-lite@dev/
-code:     lib.testhackerman12.mongodb-lite['@dev']()
-shell:    lib testhackerman12.mongodb-lite[@dev]
-context:  (enabled)
-bg:       info
-
-  A basic Hello World function
-  @param {string} name Who you're saying hello to
-  @returns {string}
   ```

@@ -1,0 +1,26 @@
+{
+  "name": "event-connect",
+  "version": "0.0.0",
+  "author": "testhackerman12 <testhackerman12@hotmail.com>",
+  "main": "functions/__main__.js",
+  "dependencies": {
+    "lib": "^3.0.2",
+    "request": "^2.88.0"
+  },
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "testhackerman12/event-connect",
+    "timeout": 10000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "description": ""
+}
