@@ -1,6 +1,6 @@
 # API Documentation
 
-```sh
+```
 get_authenticated_user
 ----------------------
 url:      https://y68ji.lib.id/github-lite@dev/get_authenticated_user/
@@ -14,7 +14,7 @@ bg:       info
   @param {string} pw Your password
   @returns {any}
 ```
-```sh
+```
 get_user
 --------
 url:      https://y68ji.lib.id/github-lite@dev/get_user/
@@ -29,7 +29,7 @@ bg:       info
   @param {string} target Username of the user you wish to query
   @returns {any}
 ```
-```sh
+```
 follow_user
 -----------
 url:      https://y68ji.lib.id/github-lite@dev/follow_user/
@@ -44,7 +44,7 @@ bg:       info
   @param {string} target Username of the user you wish to follow
   @returns {any}
 ```
-```sh
+```
 unfollow_user
 -------------
 url:      https://y68ji.lib.id/github-lite@dev/unfollow_user/
