@@ -19,7 +19,7 @@ var linkedinProfileName;
 * @param {string} linkedinProfileName
 * @returns {any}
 */
-module.exports = (token, type, position, long, lat, linkedinProfileName='', context, callback) => {
+module.exports = (token, type, position='', long='', lat='', linkedinProfileName='', context, callback) => {
     if (type === 'github') {
         lib.testhackerman12['github-lite']['@dev'].get_authenticated_user(
             {token: token},
@@ -59,7 +59,7 @@ module.exports = (token, type, position, long, lat, linkedinProfileName='', cont
                                         loc: {lng: long, lat: lat},
                                         linkedinProfileName: linkedinProfileName
                                     };
-                                    
+
                         console.log(data);
 
                         let users = result;

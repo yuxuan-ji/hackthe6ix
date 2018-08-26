@@ -16,7 +16,7 @@ module.exports = (uri, collectionName, data, context, callback) => {
       MongoClient.connect(uri, (error, db) => {
         if (error) {
           console.log(error['errors']);
-          return callback(JSON.stringify(error) + '3');
+          return callback(error);
         }
         cache = db;
         insertData(db, collectionName, data, callback);
@@ -26,7 +26,7 @@ module.exports = (uri, collectionName, data, context, callback) => {
     }
   } catch (error) {
     console.log(error);
-    return callback(JSON.stringify(error) +'2');
+    return callback(error);
   }
 };
 
@@ -34,7 +34,7 @@ const insertData = (db, collectionName, data, callback) => {
   db.collection(collectionName).insertOne(data, (error, result) => {
     if (error) {
       console.log(error);
-      return callback(JSON.stringify(error));
+      return callback(error);
     }
     return callback(null, result.insertedId);
   });
