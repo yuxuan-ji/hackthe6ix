@@ -6,9 +6,10 @@ let cache = null;
 /**
 * @param {string} uri uri of the database
 * @param {string} collectionName 
-* @returns {array}
+* @param {object} query
+* @returns {string} Returning array throws JSON non serializable
 */
-module.exports = (uri, collectionName, context, callback) => {
+module.exports = (uri, collectionName, query, context, callback) => {
   try {
     if (cache === null) {
       MongoClient.connect(uri, (error, db) => {
@@ -17,10 +18,10 @@ module.exports = (uri, collectionName, context, callback) => {
           return callback(error);
         }
         cache = db;
-        selectData(db, collectionName, callback);
+        selectData(db, collectionName, query, callback);
       });
     } else {
-      selectData(cache, collectionName, callback);
+      selectData(cache, collectionName, query, callback);
     }
   } catch (error) {
     console.log(error);
@@ -28,16 +29,16 @@ module.exports = (uri, collectionName, context, callback) => {
   }
 };
 
-const selectData = (db, collectionName, callback) => {
-  let cursor = db.collection(collectionName).find();
-  let todos = [];
+const selectData = (db, collectionName, query, callback) => {
+  let cursor = db.collection(collectionName).find(query);
+  let items = [];
   cursor.each((error, item) => {
     if (error) {
       console.log(error);
     }
     if (item == null) {
-      return callback(null, todos);
+      return callback(null, JSON.stringify(items));
     }
-    todos.push(item);
+    items.push(item);
   });
 };

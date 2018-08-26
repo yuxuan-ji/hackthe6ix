@@ -2,7 +2,7 @@ const request = require("request");
 /**
 * Get the current authenticated user
 * @param {string} token OAuth token
-* @returns {any}
+* @returns {object}
 */
 module.exports = (token, context, callback) => {
     var auth = 'token ' + token;

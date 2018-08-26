@@ -37,7 +37,8 @@ bg:       info
 
   @param {string} uri uri of the database
   @param {string} collectionName
-  @returns {array}
+  @param {object} query
+  @returns {string} Returning array throws JSON non serializable
 
 update
 ------
@@ -52,5 +53,4 @@ bg:       info
   @param {array} ids
   @param {object} data {"key_name":"updated_value"}
   @returns {any}
-
-  ```
+```

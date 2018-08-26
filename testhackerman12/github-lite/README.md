@@ -24,7 +24,7 @@ bg:       info
 
   Get the current authenticated user
   @param {string} token OAuth token
-  @returns {any}
+  @returns {object}
 
 get_user
 --------
@@ -51,4 +51,5 @@ bg:       info
   @param {string} token OAuth token
   @param {string} target Username of the user you wish to unfollow
   @returns {any}
+
 ```

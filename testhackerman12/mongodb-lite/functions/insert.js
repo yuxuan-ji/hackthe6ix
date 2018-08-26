@@ -11,13 +11,12 @@ let cache = null;
 module.exports = (uri, collectionName, data, context, callback) => {
   let text = context.params.text || '';
   let completed = context.params.completed || false;
-
   try {
     if (cache === null) {
       MongoClient.connect(uri, (error, db) => {
         if (error) {
           console.log(error['errors']);
-          return callback(error);
+          return callback(JSON.stringify(error) + '3');
         }
         cache = db;
         insertData(db, collectionName, data, callback);
@@ -27,7 +26,7 @@ module.exports = (uri, collectionName, data, context, callback) => {
     }
   } catch (error) {
     console.log(error);
-    return callback(error);
+    return callback(JSON.stringify(error) +'2');
   }
 };
 
@@ -35,7 +34,7 @@ const insertData = (db, collectionName, data, callback) => {
   db.collection(collectionName).insertOne(data, (error, result) => {
     if (error) {
       console.log(error);
-      return callback(null, error);
+      return callback(JSON.stringify(error));
     }
     return callback(null, result.insertedId);
   });
