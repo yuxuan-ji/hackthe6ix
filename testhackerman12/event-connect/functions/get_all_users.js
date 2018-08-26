@@ -11,7 +11,7 @@ module.exports = (context, callback) => {
             query: {}
         },
         function(err, res) {
-            callback(err, res);
+            callback(err, JSON.parse(res));
         }
     );
     

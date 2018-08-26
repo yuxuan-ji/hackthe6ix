@@ -7,7 +7,7 @@ let cache = null;
 * @param {string} uri uri of the database
 * @param {string} collectionName 
 * @param {object} query
-* @returns {string} Returning array throws JSON non serializable
+* @returns {any} Returning array throws JSON non serializable
 */
 module.exports = (uri, collectionName, query, context, callback) => {
   try {
