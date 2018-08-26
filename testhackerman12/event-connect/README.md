@@ -1,14 +1,16 @@
 # API Documentation
 ```
-get_all_users
--------------
-url:      https://testhackerman12.lib.id/event-connect@dev/get_all_users/
-code:     lib.testhackerman12.event-connect['@dev'].get_all_users()
-shell:    lib testhackerman12.event-connect[@dev].get_all_users
+get_near_users
+--------------
+url:      https://testhackerman12.lib.id/event-connect@dev/get_near_users/
+code:     lib.testhackerman12.event-connect['@dev'].get_near_users()
+shell:    lib testhackerman12.event-connect[@dev].get_near_users
 context:  (enabled)
 bg:       info
 
-  Get an user
+  Get all near users
+  @param {string} long
+  @param {string} lat
   @returns {any}
 
 login
@@ -25,5 +27,6 @@ bg:       info
   @param {string} position
   @param {string} long Longitude
   @param {string} lat Latitude
+  @param {string} linkedinProfileName
   @returns {any}
 ```
