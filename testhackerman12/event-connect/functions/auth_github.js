@@ -1,11 +1,12 @@
 const lib = require('lib');
 const request = require('request');
 /**
-* Get all near users
+* authenticate
 * @param {string} code 
 * @returns {any}
 */
 module.exports = (code, context, callback) => {
+    console.log('code ' + code);
     request.post(
         {
             headers:{"Accept": "application/json"},
@@ -14,6 +15,7 @@ module.exports = (code, context, callback) => {
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var token= JSON.parse(body).access_token;
+                console.log('token ' + token);
                 request(
                     {
                       headers:{"Authorization": "token "+token,
@@ -30,7 +32,6 @@ module.exports = (code, context, callback) => {
                           console.log(JSON.parse(error));
                         }
                     });
-                console.log(token);
                 window.location.replace("http://localhost:4200/signup?type=github&token='+token");
             }
             callback(error, response);
